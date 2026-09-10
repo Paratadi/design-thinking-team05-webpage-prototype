@@ -275,13 +275,16 @@
       return;
     }
 
+    /* Der untere Rand wird kräftig eingezogen: ein Block startet erst, wenn
+       er ein Stück weit im Bild ist. Sonst ist die Animation vorbei, bevor
+       man ihn überhaupt sieht. */
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
         entry.target.classList.add('is-visible');
         observer.unobserve(entry.target);
       });
-    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.08 });
+    }, { rootMargin: '0px 0px -18% 0px', threshold: 0.05 });
 
     Array.prototype.forEach.call(items, function (item) {
       observer.observe(item);
