@@ -12,16 +12,25 @@ Doppelklick genauso wie auf GitHub Pages.
 
 ```
 index.html          Startseite (Hero, Zahlen, Über, Galerie, Events, Partner, Kontakt)
+events-data.js      ALLE Eventinhalte — die einzige Datei, die für Events zählt
+events/event.html   Eine Vorlage, die jeden Beitrag anzeigt
 style.css           Gemeinsames Stylesheet für alle Seiten
-script.js           Mobile-Navigation, Event-Filter/Suche, Scroll-Reveal
+script.js           Baut die Karten und Beiträge, Navigation, Filter, Suche
 assets/             SVG-Platzhalter: Logo, Favicon, Bilder, Sponsor-Logos
-events/
-  event-1.html      Lokaler Foodtruck-Abend
-  event-2.html      Infoabend: So funktioniert die LEG
-  event-3.html      Familiennachmittag mit Sunny
-  event-4.html      WG Green Living Awards
-  _template.html    Kopiervorlage für neue Beiträge (wird nicht verlinkt)
 ```
+
+### Wie die Events funktionieren
+
+Es gibt **keine HTML-Datei pro Event**. Alle Inhalte stehen in
+`events-data.js`; `script.js` baut daraus die Karten der Startseite und füllt
+`events/event.html`. Welcher Beitrag angezeigt wird, steht in der Adresse:
+
+```
+events/event.html?id=foodtruck-september
+```
+
+Vorteil: Ein Event wird an genau einer Stelle gepflegt. Layout-Änderungen
+gelten sofort für alle Beiträge.
 
 ## Lokal ansehen
 
@@ -37,40 +46,50 @@ dafür nichts geändert werden.
 
 ## Neues Event hinzufügen
 
-1. **Beitrag anlegen:** `events/_template.html` kopieren und umbenennen,
-   z. B. zu `events/event-5.html`. Alle mit `HIER ANPASSEN` markierten Stellen
-   ausfüllen (Titel, Datum, Uhrzeit, Ort, Kategorie, Bild, Text, Eckdaten).
-2. **Auf der Startseite verlinken:** In `index.html` im Block
-   `<div class="event-grid">` eine bestehende `<article class="event-card">`
-   duplizieren und anpassen:
-   - `data-category` — Kategorie in Kleinbuchstaben, steuert den Filter
-   - `data-title` — Titel, wird von der Suche durchsucht
-   - Bild, Tag, Tag-Datum (`event-card__day` / `event-card__month`), Überschrift, Teaser
-   - `href` auf die neue Datei, z. B. `events/event-5.html`
-3. **Neue Kategorie?** In `index.html` bei `<div class="filter-chips">` einen
-   weiteren Button ergänzen. Sein `data-filter` muss exakt dem `data-category`
-   der Karte entsprechen.
+Nur **eine** Datei anfassen: `events-data.js`.
+
+1. Einen bestehenden Block im Array kopieren und die Werte anpassen.
+2. Speichern, Seite neu laden. Karte und Beitrag sind sofort da, die Sortierung
+   nach Datum passiert automatisch.
+
+Worauf zu achten ist:
+
+| Feld | Bedeutung |
+|---|---|
+| `id` | eindeutig, nur Kleinbuchstaben und Bindestriche — steht später in der Adresse |
+| `category` | steuert den Filter, muss zu einem Chip in `index.html` passen |
+| `date` | `JJJJ-MM-TT`, wird zum Sortieren benutzt |
+| `day` / `month` | was auf der Karte im Datums-Badge steht (z. B. `18` / `Sep`) |
+| `image` | Dateiname aus `assets/`, ohne Pfad |
+| `sections` | der Fließtext: pro Block wahlweise `heading`, `paragraphs`, `list` |
+
+**Neue Kategorie?** In `index.html` bei `<div class="filter-chips">` einen
+weiteren Button ergänzen. Sein `data-filter` muss exakt dem `category`-Wert aus
+`events-data.js` entsprechen.
 
 ## Bilder ersetzen
 
 Unter `assets/` liegen SVG-Platzhalter. Ein echtes Foto einbinden: Datei in
-`assets/` ablegen und im `<img src="…">` den Dateinamen tauschen — plus einen
-`alt`-Text schreiben, der beschreibt, was zu sehen ist. Seitenverhältnisse
-regelt das CSS (`object-fit: cover`), Fotos müssen nicht zugeschnitten werden.
+`assets/` ablegen, dann den Dateinamen eintragen — bei Events im Feld `image`
+in `events-data.js`, sonst direkt im `<img src="…">`. Dazu einen `alt`-Text
+schreiben, der beschreibt, was zu sehen ist. Seitenverhältnisse regelt das CSS
+(`object-fit: cover`), Fotos müssen nicht zugeschnitten werden.
 
 ## Platzhalter, die vor einer echten Veröffentlichung ersetzt gehören
 
 Im HTML jeweils als `<!-- PLATZHALTER: … -->` markiert:
 
-- Kennzahlen im Band unter dem Hero (`142 Haushalte`, `310 kWp` …)
 - Sponsorenlogos und -texte (lokaler Solarhersteller, Stadtwerk, weitere Partner)
-- Kontaktadresse `info@leg-beispiel.de`, Anschrift, Impressum und Datenschutz
-- Alle Event-Inhalte samt Daten aus dem Jahr 2026
+- Kontaktadresse `kontakt@leg-prototyp.example`, Anschrift, Rechtliches und
+  Datenschutz — bewusst neutral gehalten, ohne Ortsbezug
+- Alle Event-Inhalte in `events-data.js` samt Daten aus 2026 und 2027
 
 ## Barrierefreiheit und Verhalten
 
-- Ohne JavaScript bleibt die Seite vollständig nutzbar; der Event-Filter ist
-  eine Zusatzfunktion, alle Karten sind dann sichtbar.
+- Der Rest der Seite (Hero, Über, Galerie, Partner, Kontakt, Footer) steht
+  fest im HTML und funktioniert auch ohne JavaScript. Die Events werden aus
+  `events-data.js` erzeugt und brauchen JavaScript — ohne erscheint an ihrer
+  Stelle ein Hinweistext.
 - `prefers-reduced-motion` wird respektiert — dann laufen keine Animationen.
 - Sprunglink, sichtbarer Fokusring, Beschriftungen und `alt`-Texte sind gesetzt.
 - Ab 1800 px Breite skaliert die Typografie hoch, damit die Seite auch auf einem

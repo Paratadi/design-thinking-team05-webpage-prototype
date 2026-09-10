@@ -1,6 +1,10 @@
 /* ==========================================================================
    LEG — gemeinsames Skript für Startseite und Beitragsseiten.
    Vanilla JS, kein Build, keine Abhängigkeiten.
+
+   Die Eventdaten stehen in events-data.js (window.LEG_EVENTS). Dieses Skript
+   baut daraus die Karten der Startseite und die einzelne Beitragsseite.
+
    Jeder Block prüft zuerst, ob seine Elemente existieren, damit dieselbe
    Datei auf allen Seiten eingebunden werden kann.
    ========================================================================== */
@@ -10,6 +14,68 @@
   var reduceMotion = window.matchMedia
     ? window.matchMedia('(prefers-reduced-motion: reduce)').matches
     : false;
+
+  var events = (window.LEG_EVENTS || []).slice().sort(function (a, b) {
+    return a.date < b.date ? -1 : a.date > b.date ? 1 : 0;
+  });
+
+  /* Pfade unterscheiden sich zwischen Startseite und events/-Ordner.
+     Beide Werte stehen als data-Attribute am <body>. */
+  var assetsPath = document.body.getAttribute('data-assets-path') || 'assets/';
+  var eventsPath = document.body.getAttribute('data-events-path') || 'events/';
+
+  function esc(value) {
+    return String(value == null ? '' : value)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  function eventUrl(id) {
+    return eventsPath + 'event.html?id=' + encodeURIComponent(id);
+  }
+
+  function findEvent(id) {
+    for (var i = 0; i < events.length; i++) {
+      if (events[i].id === id) return events[i];
+    }
+    return null;
+  }
+
+  /* ------------------------------------------------------- Kartenmarkup */
+  function cardHtml(ev) {
+    var tagClass = ev.category === 'maskottchen' ? 'tag tag--sun' : 'tag';
+
+    return '' +
+      '<article class="event-card" data-category="' + esc(ev.category) + '"' +
+      ' data-title="' + esc(ev.title) + '">' +
+        '<div class="event-card__media">' +
+          '<img src="' + esc(assetsPath + ev.image) + '" alt="' + esc(ev.alt) + '"' +
+          ' width="800" height="600" loading="lazy">' +
+          '<p class="event-card__date">' +
+            '<span class="event-card__day">' + esc(ev.day) + '</span>' +
+            '<span class="event-card__month">' + esc(ev.month) + '</span>' +
+          '</p>' +
+        '</div>' +
+        '<div class="event-card__body">' +
+          '<span class="' + tagClass + '">' + esc(ev.categoryLabel) + '</span>' +
+          '<h3>' + esc(ev.title) + '</h3>' +
+          '<p>' + esc(ev.teaser) + '</p>' +
+          '<a class="event-card__link" href="' + esc(eventUrl(ev.id)) + '">' +
+            'Zum Beitrag <span aria-hidden="true">&rarr;</span>' +
+          '</a>' +
+        '</div>' +
+      '</article>';
+  }
+
+  /* ------------------------------------------- Karten auf der Startseite */
+  function renderEventGrid() {
+    var grid = document.querySelector('[data-event-grid]');
+    if (!grid || !events.length) return;
+
+    grid.innerHTML = events.map(cardHtml).join('');
+  }
 
   /* ---------------------------------------------------------------- Nav */
   function initNav() {
@@ -98,13 +164,98 @@
 
     if (search) {
       search.addEventListener('input', apply);
-      // Enter im Suchfeld soll keine Seite neu laden
       search.addEventListener('keydown', function (event) {
         if (event.key === 'Enter') event.preventDefault();
       });
     }
 
     apply();
+  }
+
+  /* ------------------------------------------------- Beitragsseite */
+  function renderEventPage() {
+    var page = document.querySelector('[data-event-page]');
+    if (!page) return;
+
+    var params = new URLSearchParams(window.location.search);
+    var ev = findEvent(params.get('id'));
+
+    if (!ev) {
+      page.innerHTML =
+        '<div class="container section">' +
+          '<h1>Event nicht gefunden</h1>' +
+          '<p class="lead">Dieser Beitrag existiert nicht (mehr). ' +
+          'Auf der Startseite stehen alle aktuellen Termine.</p>' +
+          '<p><a class="btn btn--primary" href="../index.html#events">Zu den Events</a></p>' +
+        '</div>';
+      return;
+    }
+
+    document.title = ev.title + ' — LEG';
+    var description = document.querySelector('meta[name="description"]');
+    if (description) description.setAttribute('content', ev.teaser);
+
+    function fill(slot, html) {
+      var el = page.querySelector('[data-slot="' + slot + '"]');
+      if (el) el.innerHTML = html;
+    }
+
+    fill('breadcrumb', esc(ev.shortTitle || ev.title));
+    fill('eyebrow', esc(ev.categoryLabel));
+    fill('title', esc(ev.title));
+    fill('lead', esc(ev.lead));
+
+    var icons = {
+      date: '<rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path>',
+      time: '<circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path>',
+      place: '<path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"></path><circle cx="12" cy="10" r="2.5"></circle>'
+    };
+
+    function metaItem(icon, text) {
+      return '<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"' +
+        ' stroke-width="2" stroke-linecap="round" aria-hidden="true">' + icon + '</svg>' +
+        esc(text) + '</li>';
+    }
+
+    fill('meta',
+      metaItem(icons.date, ev.dateLabel) +
+      metaItem(icons.time, ev.time) +
+      metaItem(icons.place, ev.location));
+
+    fill('cover',
+      '<img src="' + esc(assetsPath + ev.image) + '" alt="' + esc(ev.alt) + '"' +
+      ' width="800" height="600">');
+
+    var body = (ev.sections || []).map(function (section) {
+      var html = '';
+      if (section.heading) html += '<h2>' + esc(section.heading) + '</h2>';
+      (section.paragraphs || []).forEach(function (text) {
+        html += '<p>' + esc(text) + '</p>';
+      });
+      if (section.list && section.list.length) {
+        html += '<ul>' + section.list.map(function (item) {
+          return '<li>' + esc(item) + '</li>';
+        }).join('') + '</ul>';
+      }
+      return html;
+    }).join('');
+
+    body += '<p><em>Hinweis: Alle Angaben sind Platzhalter des Prototyps und ' +
+      'werden vor der Veröffentlichung durch echte Inhalte ersetzt.</em></p>';
+    fill('body', body);
+
+    var facts = ev.facts || {};
+    fill('facts', Object.keys(facts).map(function (key) {
+      return '<div><dt>' + esc(key) + '</dt><dd>' + esc(facts[key]) + '</dd></div>';
+    }).join(''));
+
+    /* Die beiden nächsten Events im Kalender, umlaufend. */
+    var index = events.indexOf(ev);
+    var related = [];
+    for (var step = 1; related.length < 2 && step < events.length; step++) {
+      related.push(events[(index + step) % events.length]);
+    }
+    fill('related', related.map(cardHtml).join(''));
   }
 
   /* -------------------------------------------------- Scroll-Reveal */
@@ -136,6 +287,9 @@
     });
   }
 
+  /* Reihenfolge zählt: erst Karten bauen, dann filtern. */
+  renderEventGrid();
+  renderEventPage();
   initNav();
   initHeaderScroll();
   initEventFilter();

@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="style.css">
   <script>document.documentElement.classList.add('js');</script>
 </head>
-<body>
+<body data-assets-path="assets/" data-events-path="events/">
   <a class="skip-link" href="#main">Zum Inhalt springen</a>
 
   <!-- ====================================================== Header ==== -->
@@ -65,31 +65,6 @@
             <span aria-hidden="true">☀️</span>
             Sunny sagt Hallo
           </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================== Kennzahlen ==== -->
-    <!-- PLATZHALTER: Werte durch echte Zahlen der Gemeinschaft ersetzen. -->
-    <section class="section section--tight section--alt" aria-label="Die LEG in Zahlen">
-      <div class="container">
-        <div class="stats" data-reveal>
-          <div class="stat">
-            <span class="stat__value">142</span>
-            <span class="stat__label">Haushalte in der Gemeinschaft</span>
-          </div>
-          <div class="stat">
-            <span class="stat__value">310 kWp</span>
-            <span class="stat__label">installierte PV-Leistung</span>
-          </div>
-          <div class="stat">
-            <span class="stat__value">4</span>
-            <span class="stat__label">Quartiere im Verbund</span>
-          </div>
-          <div class="stat">
-            <span class="stat__value">−38 %</span>
-            <span class="stat__label">Netzbezug im Sommerhalbjahr</span>
-          </div>
         </div>
       </div>
     </section>
@@ -160,21 +135,21 @@
         <div class="section-head" data-reveal>
           <span class="eyebrow">Einblicke</span>
           <h2>Bilder aus der Gemeinschaft</h2>
-          <p>Platzhalter-Motive — später einfach durch eigene Fotos ersetzen.</p>
+          <p>Wohnhäuser, die ihren Strom gemeinsam erzeugen und nutzen.</p>
         </div>
 
         <div class="gallery" data-reveal>
           <figure>
-            <img src="assets/img-solar.svg" alt="Häuser mit Photovoltaik-Modulen auf den Dächern" width="800" height="600" loading="lazy">
-            <figcaption>Unsere Anlagen auf den Dächern im Quartier</figcaption>
+            <img src="assets/Nachbarschaft.png" alt="Luftaufnahme einer Wohnsiedlung, auf mehreren Dächern liegen Solarmodule" width="1000" height="563" loading="lazy">
+            <figcaption>Mehrere Gebäude, eine gemeinsame Erzeugung</figcaption>
           </figure>
           <figure>
-            <img src="assets/img-community.svg" alt="Menschen im Gespräch an einem Infopoint der LEG" width="800" height="600" loading="lazy">
-            <figcaption>Infopoint und Austausch beim Nachbarschaftstreffen</figcaption>
+            <img src="assets/Nachbarschaft2.png" alt="Blick über die Dächer der Siedlung mit Solaranlagen, im Hintergrund Berge" width="600" height="400" loading="lazy">
+            <figcaption>Anlagen auf den Flachdächern der Nachbarschaft</figcaption>
           </figure>
           <figure>
-            <img src="assets/img-evening.svg" alt="Beleuchtetes Quartier am Abend mit Lichterketten" width="800" height="600" loading="lazy">
-            <figcaption>Abendstimmung bei Veranstaltungen im Viertel</figcaption>
+            <img src="assets/Nachbarschaft3.png" alt="Begrünte Flachdächer mit Photovoltaik-Modulen zwischen Wohnhäusern" width="500" height="375" loading="lazy">
+            <figcaption>Begrünte Dächer und Photovoltaik zusammen gedacht</figcaption>
           </figure>
         </div>
       </div>
@@ -210,97 +185,16 @@
 
         <p class="filter-status" data-filter-status role="status" aria-live="polite"></p>
 
-        <div class="event-grid" data-event-grid>
+        <!-- Die Karten werden aus events-data.js erzeugt (siehe script.js).
+             Neues Event = neuer Eintrag in events-data.js, hier nichts ändern. -->
+        <div class="event-grid" data-event-grid></div>
 
-          <!-- Event 1 -->
-          <article class="event-card" data-category="foodtruck" data-title="Lokaler Foodtruck-Abend bei der LEG">
-            <div class="event-card__media">
-              <img src="assets/img-foodtruck.svg" alt="Foodtruck mit Wimpelkette auf dem LEG-Hof" width="800" height="600" loading="lazy">
-              <p class="event-card__date">
-                <span class="event-card__day">18</span>
-                <span class="event-card__month">Sep</span>
-              </p>
-            </div>
-            <div class="event-card__body">
-              <span class="tag">Foodtruck</span>
-              <h3>Lokaler Foodtruck-Abend bei der LEG</h3>
-              <p>
-                Regionaler Foodtruck, Gespräche am Stand und kurze Info-Häppchen
-                zu gemeinsamer Energie vor Ort.
-              </p>
-              <a class="event-card__link" href="events/event-1.html">
-                Zum Beitrag <span aria-hidden="true">→</span>
-              </a>
-            </div>
-          </article>
-
-          <!-- Event 2 -->
-          <article class="event-card" data-category="infoveranstaltung" data-title="Infoabend: So funktioniert die LEG">
-            <div class="event-card__media">
-              <img src="assets/img-info.svg" alt="Vortrag mit Diagrammen vor Publikum" width="800" height="600" loading="lazy">
-              <p class="event-card__date">
-                <span class="event-card__day">24</span>
-                <span class="event-card__month">Sep</span>
-              </p>
-            </div>
-            <div class="event-card__body">
-              <span class="tag">Infoveranstaltung</span>
-              <h3>Infoabend: So funktioniert die LEG</h3>
-              <p>
-                Kompakter Überblick für neue Mitglieder, Nachbarschaften und
-                Interessierte — mit viel Raum für Fragen.
-              </p>
-              <a class="event-card__link" href="events/event-2.html">
-                Zum Beitrag <span aria-hidden="true">→</span>
-              </a>
-            </div>
-          </article>
-
-          <!-- Event 3 -->
-          <article class="event-card" data-category="maskottchen" data-title="Sunny lädt zum Familiennachmittag ein">
-            <div class="event-card__media">
-              <img src="assets/img-sunny.svg" alt="Sunny, das Sonnen-Maskottchen der LEG, winkt" width="800" height="600" loading="lazy">
-              <p class="event-card__date">
-                <span class="event-card__day">02</span>
-                <span class="event-card__month">Okt</span>
-              </p>
-            </div>
-            <div class="event-card__body">
-              <span class="tag tag--sun">Maskottchen</span>
-              <h3>Sunny lädt zum Familiennachmittag ein</h3>
-              <p>
-                Unser Maskottchen Sunny begleitet Mitmachstationen, Bastelecken
-                und Fotopunkte für Groß und Klein.
-              </p>
-              <a class="event-card__link" href="events/event-3.html">
-                Zum Beitrag <span aria-hidden="true">→</span>
-              </a>
-            </div>
-          </article>
-
-          <!-- Event 4 -->
-          <article class="event-card" data-category="awards" data-title="WG Green Living Awards">
-            <div class="event-card__media">
-              <img src="assets/img-awards.svg" alt="Pokal auf einer Bühne mit Konfetti" width="800" height="600" loading="lazy">
-              <p class="event-card__date">
-                <span class="event-card__day">11</span>
-                <span class="event-card__month">Okt</span>
-              </p>
-            </div>
-            <div class="event-card__body">
-              <span class="tag">Awards</span>
-              <h3>WG Green Living Awards</h3>
-              <p>
-                Auszeichnung für gemeinschaftliche Wohnideen, Energieeffizienz
-                und smarte Nachbarschaftsprojekte.
-              </p>
-              <a class="event-card__link" href="events/event-4.html">
-                Zum Beitrag <span aria-hidden="true">→</span>
-              </a>
-            </div>
-          </article>
-
-        </div>
+        <noscript>
+          <p class="empty-state">
+            Für die Eventübersicht wird JavaScript benötigt. Die Termine stehen
+            auch am Aushang im Quartiersbüro.
+          </p>
+        </noscript>
 
         <p class="empty-state" data-empty hidden>
           Keine Events gefunden. Anderen Suchbegriff probieren oder Filter auf „Alle“ zurücksetzen.
@@ -387,7 +281,7 @@
         </div>
         <div class="cta-band__actions">
           <!-- PLATZHALTER: echte Adresse eintragen. -->
-          <a class="btn btn--light" href="mailto:info@leg-beispiel.de">Nachricht schreiben</a>
+          <a class="btn btn--light" href="mailto:kontakt@leg-prototyp.example">Nachricht schreiben</a>
           <a class="btn btn--ghost" href="#events">Zu den Events</a>
         </div>
       </div>
@@ -425,9 +319,9 @@
           <!-- PLATZHALTER: echte Kontaktdaten und Rechtstexte ergänzen. -->
           <ul>
             <li>LEG Quartiersbüro</li>
-            <li>Musterstraße 1, 12345 Musterstadt</li>
-            <li><a href="mailto:info@leg-beispiel.de">info@leg-beispiel.de</a></li>
-            <li><a href="#kontakt">Impressum &amp; Datenschutz</a></li>
+            <li>Adresse wird noch ergänzt</li>
+            <li><a href="mailto:kontakt@leg-prototyp.example">kontakt@leg-prototyp.example</a></li>
+            <li><a href="#kontakt">Rechtliches &amp; Datenschutz</a></li>
           </ul>
         </div>
       </div>
@@ -439,6 +333,8 @@
     </div>
   </footer>
 
+  <!-- Reihenfolge zählt: erst die Daten, dann das Skript. -->
+  <script src="events-data.js" defer></script>
   <script src="script.js" defer></script>
 </body>
 </html>

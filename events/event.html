@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!--
+  ============================================================================
+  EINE Seite für ALLE Events.
+
+  Welches Event angezeigt wird, steht in der Adresse:
+      events/event.html?id=foodtruck-september
+
+  Die Inhalte kommen aus ../events-data.js. Um ein Event zu ändern oder ein
+  neues anzulegen, wird NUR diese Datendatei bearbeitet — an dieser HTML-Datei
+  muss nichts angepasst werden.
+
+  Die leeren Elemente mit data-slot="…" werden von ../script.js gefüllt.
+  ============================================================================
+-->
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event — LEG</title>
+  <meta name="description" content="Beitrag zu einem Event der LEG.">
+  <meta name="theme-color" content="#1e7a5c">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../style.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body data-assets-path="../assets/" data-events-path="">
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../index.html">
+        <img src="../assets/logo.svg" alt="" width="38" height="38">
+        <span class="brand__name">LEG
+          <span class="brand__sub">Lokale Elektrizitätsgemeinschaften</span>
+        </span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menü öffnen">
+        <span class="nav-toggle__bars" aria-hidden="true"></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Hauptnavigation">
+        <ul class="site-nav__list">
+          <li><a href="../index.html#ueber">Über die LEG</a></li>
+          <li><a href="../index.html#galerie">Einblicke</a></li>
+          <li><a href="../index.html#events">Events</a></li>
+          <li><a href="../index.html#sponsoren">Partner</a></li>
+          <li><a class="btn btn--primary btn--sm" href="../index.html#kontakt">Mitglied werden</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" data-event-page>
+    <noscript>
+      <div class="container section">
+        <h1>JavaScript ist deaktiviert</h1>
+        <p class="lead">
+          Die Beiträge werden aus einer gemeinsamen Datendatei aufgebaut. Ohne
+          JavaScript kann der Inhalt nicht angezeigt werden.
+        </p>
+        <p><a class="btn btn--primary" href="../index.html">Zur Startseite</a></p>
+      </div>
+    </noscript>
+
+    <nav class="breadcrumb container" aria-label="Brotkrümelnavigation">
+      <ol>
+        <li><a href="../index.html">Startseite</a></li>
+        <li><a href="../index.html#events">Events</a></li>
+        <li aria-current="page" data-slot="breadcrumb"></li>
+      </ol>
+    </nav>
+
+    <header class="post-header container">
+      <span class="eyebrow" data-slot="eyebrow"></span>
+      <h1 data-slot="title"></h1>
+      <p class="lead" data-slot="lead"></p>
+      <ul class="post-meta" data-slot="meta"></ul>
+    </header>
+
+    <div class="post-cover container" data-slot="cover"></div>
+
+    <div class="post-body">
+      <div class="container post-layout">
+        <article class="post-text" data-slot="body"></article>
+
+        <aside class="facts">
+          <h2>Auf einen Blick</h2>
+          <dl data-slot="facts"></dl>
+          <a class="btn btn--primary" href="../index.html#kontakt">Fragen? Schreib uns</a>
+        </aside>
+      </div>
+    </div>
+
+    <section class="section section--tight section--alt related">
+      <div class="container">
+        <h2>Das könnte auch passen</h2>
+        <div class="event-grid" data-slot="related"></div>
+
+        <div class="post-nav">
+          <a class="btn btn--ghost" href="../index.html"><span aria-hidden="true">←</span> Zur Startseite</a>
+          <a class="btn btn--ghost" href="../index.html#events">Alle Events</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <span class="site-footer__brand">
+            <img src="../assets/logo.svg" alt="" width="32" height="32">
+            LEG
+          </span>
+          <p>
+            Lokale Elektrizitätsgemeinschaften bündeln Erzeugung und Verbrauch
+            von Strom in der Nachbarschaft — gemeinschaftlich organisiert und
+            vor Ort sichtbar.
+          </p>
+        </div>
+
+        <div>
+          <h4>Seite</h4>
+          <ul>
+            <li><a href="../index.html#ueber">Über die LEG</a></li>
+            <li><a href="../index.html#galerie">Einblicke</a></li>
+            <li><a href="../index.html#events">Events</a></li>
+            <li><a href="../index.html#sponsoren">Partner</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Kontakt</h4>
+          <ul>
+            <li>LEG Quartiersbüro</li>
+            <li>Adresse wird noch ergänzt</li>
+            <li><a href="mailto:kontakt@leg-prototyp.example">kontakt@leg-prototyp.example</a></li>
+            <li><a href="../index.html#kontakt">Rechtliches &amp; Datenschutz</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <span>© 2026 LEG — Prototyp für Design Thinking Team 05</span>
+        <span>Alle Inhalte sind Platzhalter.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Reihenfolge zählt: erst die Daten, dann das Skript. -->
+  <script src="../events-data.js" defer></script>
+  <script src="../script.js" defer></script>
+</body>
+</html>
