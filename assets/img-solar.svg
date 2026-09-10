@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Illustration: Solaranlagen auf Nachbarschaftsdaechern">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d9ecf7"/>
+      <stop offset="1" stop-color="#eef6f1"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#sky)"/>
+  <circle cx="648" cy="126" r="58" fill="#f0a92b"/>
+  <g stroke="#f0a92b" stroke-width="7" stroke-linecap="round" opacity=".75">
+    <path d="M648 26v-16"/><path d="M648 242v16"/><path d="M540 126h-16"/><path d="M756 126h16"/>
+    <path d="M572 50l-11-11"/><path d="M724 202l11 11"/><path d="M724 50l11-11"/><path d="M572 202l-11 11"/>
+  </g>
+  <path d="M0 430c120-26 210 10 320-8s230-52 480-14v192H0z" fill="#cfe4d7"/>
+  <path d="M0 486c150-30 250 6 360-10s280-34 440-6v130H0z" fill="#bcd9c9"/>
+
+  <!-- Haus links -->
+  <rect x="82" y="352" width="176" height="150" fill="#ffffff"/>
+  <path d="M64 356l106-74 106 74z" fill="#1e7a5c"/>
+  <rect x="118" y="398" width="44" height="42" fill="#d9ecf7"/>
+  <rect x="186" y="398" width="44" height="42" fill="#d9ecf7"/>
+  <rect x="146" y="458" width="44" height="44" fill="#14513e"/>
+  <g transform="rotate(-34 170 300)">
+    <rect x="118" y="272" width="106" height="58" rx="4" fill="#2c4a63"/>
+    <g stroke="#7fb2d6" stroke-width="3">
+      <path d="M118 291h106"/><path d="M118 310h106"/><path d="M153 272v58"/><path d="M189 272v58"/>
+    </g>
+  </g>
+
+  <!-- Haus mitte -->
+  <rect x="316" y="304" width="196" height="198" fill="#ffffff"/>
+  <path d="M296 308l118-84 118 84z" fill="#14513e"/>
+  <rect x="352" y="352" width="50" height="48" fill="#d9ecf7"/>
+  <rect x="426" y="352" width="50" height="48" fill="#d9ecf7"/>
+  <rect x="352" y="424" width="50" height="48" fill="#d9ecf7"/>
+  <rect x="426" y="424" width="50" height="78" fill="#1e7a5c"/>
+  <g transform="rotate(-30 414 246)">
+    <rect x="352" y="216" width="124" height="64" rx="4" fill="#2c4a63"/>
+    <g stroke="#7fb2d6" stroke-width="3">
+      <path d="M352 237h124"/><path d="M352 259h124"/><path d="M393 216v64"/><path d="M435 216v64"/>
+    </g>
+  </g>
+
+  <!-- Haus rechts -->
+  <rect x="566" y="382" width="150" height="120" fill="#ffffff"/>
+  <path d="M550 386l91-62 91 62z" fill="#1e7a5c"/>
+  <rect x="596" y="420" width="40" height="38" fill="#d9ecf7"/>
+  <rect x="654" y="420" width="40" height="82" fill="#14513e"/>
+  <g transform="rotate(-32 641 342)">
+    <rect x="596" y="316" width="92" height="50" rx="4" fill="#2c4a63"/>
+    <g stroke="#7fb2d6" stroke-width="3">
+      <path d="M596 333h92"/><path d="M596 349h92"/><path d="M627 316v50"/><path d="M657 316v50"/>
+    </g>
+  </g>
+
+  <!-- Baeume -->
+  <g fill="#1e7a5c">
+    <circle cx="278" cy="470" r="34"/><rect x="271" y="492" width="14" height="34" fill="#8a6a44"/>
+    <circle cx="536" cy="486" r="26"/><rect x="530" y="502" width="12" height="28" fill="#8a6a44"/>
+  </g>
+</svg>

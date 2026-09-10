@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 120" width="320" height="120" role="img" aria-label="Logo-Platzhalter: lokaler Solarhersteller">
+  <rect width="320" height="120" rx="12" fill="#ffffff"/>
+  <g transform="translate(28 30)">
+    <rect x="0" y="18" width="58" height="38" rx="4" fill="#2c4a63" transform="skewX(-12)"/>
+    <g stroke="#7fb2d6" stroke-width="2.5" transform="skewX(-12)">
+      <path d="M0 31h58"/><path d="M0 44h58"/><path d="M19 18v38"/><path d="M38 18v38"/>
+    </g>
+    <circle cx="52" cy="8" r="10" fill="#f0a92b"/>
+  </g>
+  <text x="110" y="56" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="700" fill="#14513e">SOLAR LOKAL</text>
+  <text x="110" y="78" font-family="Segoe UI, Arial, sans-serif" font-size="11" letter-spacing="2" fill="#5a6b62">LOGO PLATZHALTER</text>
+</svg>

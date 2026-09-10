@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Illustration: Sunny, das LEG-Maskottchen, winkt">
+  <rect width="800" height="600" fill="#fff6e2"/>
+  <circle cx="400" cy="286" r="238" fill="#ffeecb"/>
+  <path d="M0 486c130-34 250 12 400-10s280-26 400 4v120H0z" fill="#cfe4d7"/>
+
+  <!-- Strahlen -->
+  <g stroke="#f0a92b" stroke-width="16" stroke-linecap="round">
+    <path d="M400 66v-34"/><path d="M400 506v34"/>
+    <path d="M180 286h-34"/><path d="M620 286h34"/>
+    <path d="M244 130l-24-24"/><path d="M556 442l24 24"/>
+    <path d="M556 130l24-24"/><path d="M244 442l-24 24"/>
+  </g>
+
+  <!-- Koerper -->
+  <circle cx="400" cy="286" r="150" fill="#f0a92b"/>
+  <circle cx="400" cy="286" r="150" fill="none" stroke="#dd9418" stroke-width="6"/>
+
+  <!-- Gesicht -->
+  <g fill="#3b2a10">
+    <circle cx="352" cy="262" r="16"/>
+    <circle cx="448" cy="262" r="16"/>
+  </g>
+  <g fill="#ffffff">
+    <circle cx="357" cy="256" r="5"/><circle cx="453" cy="256" r="5"/>
+  </g>
+  <path d="M344 322a58 58 0 0 0 112 0z" fill="#a8391f"/>
+  <path d="M344 322h112a58 58 0 0 1-2 12H346z" fill="#ffffff"/>
+  <g fill="#e0685b" opacity=".55">
+    <circle cx="318" cy="308" r="18"/><circle cx="482" cy="308" r="18"/>
+  </g>
+
+  <!-- Arme -->
+  <path d="M256 296q-56-14-74-62" fill="none" stroke="#dd9418" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="176" cy="222" r="26" fill="#f0a92b" stroke="#dd9418" stroke-width="5"/>
+  <path d="M544 296q56-14 74-62" fill="none" stroke="#dd9418" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="624" cy="222" r="26" fill="#f0a92b" stroke="#dd9418" stroke-width="5"/>
+
+  <!-- Fuesse -->
+  <g fill="#dd9418">
+    <ellipse cx="352" cy="446" rx="34" ry="18"/>
+    <ellipse cx="448" cy="446" rx="34" ry="18"/>
+  </g>
+</svg>

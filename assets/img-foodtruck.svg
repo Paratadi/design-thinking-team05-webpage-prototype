@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Illustration: Foodtruck auf dem LEG-Hof">
+  <rect width="800" height="600" fill="#f4efe2"/>
+  <circle cx="678" cy="118" r="62" fill="#f0a92b" opacity=".9"/>
+  <path d="M0 468h800v132H0z" fill="#dcd3c0"/>
+  <path d="M0 468h800v10H0z" fill="#c6bca6"/>
+
+  <!-- Wimpelkette -->
+  <path d="M20 82q200 74 390 22t370 6" fill="none" stroke="#1e7a5c" stroke-width="3"/>
+  <g>
+    <path d="M96 104l30 4-12 34z" fill="#1e7a5c"/>
+    <path d="M186 122l30 2-14 34z" fill="#f0a92b"/>
+    <path d="M276 128l30 0-16 34z" fill="#e0685b"/>
+    <path d="M366 124l30-2-18 33z" fill="#1e7a5c"/>
+    <path d="M456 112l30-4-20 32z" fill="#f0a92b"/>
+    <path d="M546 104l30-2-20 33z" fill="#e0685b"/>
+    <path d="M636 106l30 2-20 33z" fill="#1e7a5c"/>
+  </g>
+
+  <!-- Truck -->
+  <rect x="150" y="236" width="360" height="212" rx="18" fill="#ffffff"/>
+  <rect x="150" y="236" width="360" height="52" rx="18" fill="#1e7a5c"/>
+  <rect x="150" y="270" width="360" height="18" fill="#1e7a5c"/>
+  <path d="M510 300h74l66 72v76h-140z" fill="#14513e"/>
+  <path d="M528 316h50l44 50h-94z" fill="#a8c9dd"/>
+  <rect x="186" y="316" width="252" height="104" rx="10" fill="#f7faf8"/>
+  <rect x="186" y="316" width="252" height="104" rx="10" fill="none" stroke="#cfe0d6" stroke-width="4"/>
+  <path d="M172 300h286l16-28H156z" fill="#f0a92b"/>
+  <g fill="#e0685b">
+    <path d="M156 272h44l-11 28h-44z"/>
+    <path d="M244 272h44l-11 28h-44z"/>
+    <path d="M332 272h44l-11 28h-44z"/>
+    <path d="M420 272h38l-11 28h-38z"/>
+  </g>
+  <g fill="#cfe0d6">
+    <rect x="212" y="344" width="120" height="12" rx="6"/>
+    <rect x="212" y="368" width="94" height="12" rx="6"/>
+    <rect x="212" y="392" width="72" height="12" rx="6"/>
+  </g>
+  <g fill="#2c4a63">
+    <circle cx="252" cy="452" r="44"/><circle cx="592" cy="452" r="44"/>
+  </g>
+  <g fill="#dcd3c0">
+    <circle cx="252" cy="452" r="18"/><circle cx="592" cy="452" r="18"/>
+  </g>
+
+  <!-- Gaeste -->
+  <g>
+    <circle cx="102" cy="352" r="26" fill="#e2c6a0"/>
+    <path d="M62 448c0-22 18-40 40-40s40 18 40 40z" fill="#1e7a5c"/>
+  </g>
+  <g>
+    <circle cx="700" cy="368" r="24" fill="#f0a92b"/>
+    <path d="M664 448c0-20 16-36 36-36s36 16 36 36z" fill="#2c4a63"/>
+  </g>
+</svg>

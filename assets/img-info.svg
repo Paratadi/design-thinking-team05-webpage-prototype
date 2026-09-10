@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Illustration: Infoabend mit Vortrag und Publikum">
+  <rect width="800" height="600" fill="#eaf1f6"/>
+  <path d="M0 458h800v142H0z" fill="#d5e2ea"/>
+
+  <!-- Leinwand -->
+  <rect x="196" y="76" width="408" height="264" rx="12" fill="#ffffff"/>
+  <rect x="196" y="76" width="408" height="264" rx="12" fill="none" stroke="#b9cddb" stroke-width="6"/>
+  <rect x="226" y="106" width="150" height="16" rx="8" fill="#1e7a5c"/>
+  <rect x="226" y="138" width="106" height="12" rx="6" fill="#cfe0d6"/>
+
+  <!-- Diagramm auf Leinwand -->
+  <g>
+    <rect x="230" y="252" width="42" height="58" rx="5" fill="#cfe0d6"/>
+    <rect x="288" y="224" width="42" height="86" rx="5" fill="#7fb2d6"/>
+    <rect x="346" y="196" width="42" height="114" rx="5" fill="#1e7a5c"/>
+    <rect x="404" y="168" width="42" height="142" rx="5" fill="#f0a92b"/>
+  </g>
+  <circle cx="518" cy="232" r="46" fill="#e4f1ec"/>
+  <path d="M518 186a46 46 0 0 1 40 68l-40-22z" fill="#1e7a5c"/>
+  <path d="M472 232a46 46 0 0 1 46-46v46z" fill="#f0a92b"/>
+
+  <!-- Referentin -->
+  <g>
+    <circle cx="666" cy="292" r="30" fill="#e2c6a0"/>
+    <path d="M620 458c0-26 20-50 46-50s46 24 46 50z" fill="#1e7a5c"/>
+    <rect x="576" y="340" width="60" height="8" rx="4" fill="#14513e" transform="rotate(-22 606 344)"/>
+  </g>
+
+  <!-- Publikum -->
+  <g fill="#2c4a63">
+    <circle cx="112" cy="452" r="30"/><path d="M64 560c0-28 22-50 48-50s48 22 48 50z"/>
+  </g>
+  <g fill="#14513e">
+    <circle cx="248" cy="470" r="28"/><path d="M204 570c0-26 20-46 44-46s44 20 44 46z"/>
+  </g>
+  <g fill="#5b7f8c">
+    <circle cx="384" cy="452" r="30"/><path d="M336 560c0-28 22-50 48-50s48 22 48 50z"/>
+  </g>
+  <g fill="#14513e">
+    <circle cx="520" cy="472" r="28"/><path d="M476 572c0-26 20-46 44-46s44 20 44 46z"/>
+  </g>
+</svg>

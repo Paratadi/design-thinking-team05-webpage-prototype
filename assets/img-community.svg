@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Illustration: Nachbarschaftstreffen mit Infopoint">
+  <rect width="800" height="600" fill="#eef6f1"/>
+  <circle cx="400" cy="260" r="210" fill="#e0efe6"/>
+  <path d="M0 470h800v130H0z" fill="#cfe4d7"/>
+
+  <!-- Pavillon / Infopoint -->
+  <path d="M250 250l150-72 150 72z" fill="#1e7a5c"/>
+  <rect x="266" y="250" width="268" height="14" rx="6" fill="#14513e"/>
+  <rect x="278" y="264" width="10" height="206" fill="#a8bfb2"/>
+  <rect x="512" y="264" width="10" height="206" fill="#a8bfb2"/>
+  <rect x="316" y="330" width="168" height="98" rx="8" fill="#ffffff"/>
+  <g fill="#cfe0d6">
+    <rect x="336" y="352" width="128" height="12" rx="6"/>
+    <rect x="336" y="376" width="106" height="12" rx="6"/>
+    <rect x="336" y="400" width="80" height="12" rx="6"/>
+  </g>
+  <rect x="316" y="428" width="168" height="42" fill="#f7faf8"/>
+
+  <!-- Personen -->
+  <g>
+    <circle cx="160" cy="362" r="30" fill="#f0a92b"/>
+    <path d="M116 470c0-26 20-46 44-46s44 20 44 46z" fill="#1e7a5c"/>
+  </g>
+  <g>
+    <circle cx="234" cy="386" r="24" fill="#e2c6a0"/>
+    <path d="M198 470c0-21 16-38 36-38s36 17 36 38z" fill="#2c4a63"/>
+  </g>
+  <g>
+    <circle cx="596" cy="356" r="30" fill="#e2c6a0"/>
+    <path d="M552 470c0-26 20-46 44-46s44 20 44 46z" fill="#14513e"/>
+  </g>
+  <g>
+    <circle cx="672" cy="388" r="24" fill="#f0a92b"/>
+    <path d="M636 470c0-21 16-38 36-38s36 17 36 38z" fill="#7fb2d6"/>
+  </g>
+
+  <!-- Sprechblasen -->
+  <g fill="#ffffff">
+    <rect x="104" y="236" width="120" height="62" rx="18"/>
+    <path d="M140 296l6 22 20-22z"/>
+    <rect x="590" y="212" width="132" height="66" rx="18"/>
+    <path d="M652 276l-6 24-22-24z"/>
+  </g>
+  <g fill="#cfe0d6">
+    <rect x="124" y="256" width="80" height="10" rx="5"/>
+    <rect x="124" y="274" width="56" height="10" rx="5"/>
+    <rect x="610" y="234" width="92" height="10" rx="5"/>
+    <rect x="610" y="252" width="66" height="10" rx="5"/>
+  </g>
+</svg>

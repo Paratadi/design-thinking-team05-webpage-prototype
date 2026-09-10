@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Illustration: Preisverleihung mit Pokal auf der Buehne">
+  <rect width="800" height="600" fill="#eef6f1"/>
+  <circle cx="400" cy="280" r="216" fill="#e0efe6"/>
+  <path d="M0 476h800v124H0z" fill="#14513e"/>
+  <path d="M0 476h800v12H0z" fill="#0f3b2d"/>
+
+  <!-- Konfetti -->
+  <g>
+    <rect x="120" y="72" width="16" height="26" rx="4" fill="#f0a92b" transform="rotate(24 128 85)"/>
+    <rect x="232" y="128" width="14" height="22" rx="4" fill="#e0685b" transform="rotate(-32 239 139)"/>
+    <rect x="596" y="96" width="16" height="26" rx="4" fill="#1e7a5c" transform="rotate(18 604 109)"/>
+    <rect x="676" y="176" width="14" height="22" rx="4" fill="#f0a92b" transform="rotate(-24 683 187)"/>
+    <circle cx="176" cy="196" r="9" fill="#7fb2d6"/>
+    <circle cx="644" cy="272" r="9" fill="#e0685b"/>
+    <circle cx="150" cy="316" r="8" fill="#f0a92b"/>
+  </g>
+
+  <!-- Podest -->
+  <rect x="300" y="404" width="200" height="72" fill="#1e7a5c"/>
+  <rect x="216" y="440" width="84" height="36" fill="#2f8a6b"/>
+  <rect x="500" y="452" width="84" height="24" fill="#2f8a6b"/>
+
+  <!-- Pokal -->
+  <path d="M340 154h120v88a60 60 0 0 1-120 0z" fill="#f0a92b"/>
+  <path d="M340 168h-34a44 44 0 0 0 44 44" fill="none" stroke="#f0a92b" stroke-width="14" stroke-linecap="round"/>
+  <path d="M460 168h34a44 44 0 0 1-44 44" fill="none" stroke="#f0a92b" stroke-width="14" stroke-linecap="round"/>
+  <rect x="384" y="300" width="32" height="46" fill="#dd9418"/>
+  <rect x="348" y="346" width="104" height="26" rx="6" fill="#dd9418"/>
+  <rect x="330" y="372" width="140" height="32" rx="8" fill="#c07f12"/>
+  <path d="M400 190l12 26 28 4-20 20 5 28-25-14-25 14 5-28-20-20 28-4z" fill="#ffe6b4"/>
+
+  <!-- Blatt-Symbol auf Podest -->
+  <path d="M400 424q-26 0-26 22t26 22q26 0 26-22t-26-22z" fill="#ffffff" opacity=".28"/>
+  <path d="M362 452q28-34 76 0" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" opacity=".5"/>
+</svg>

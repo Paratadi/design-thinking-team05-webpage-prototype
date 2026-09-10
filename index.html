@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LEG — Lokale Elektrizitätsgemeinschaften</title>
+  <meta name="description" content="Die LEG bündelt lokal erzeugten Strom in der Nachbarschaft: Infos zur Gemeinschaft, kommende Events und Partner aus der Region.">
+  <meta name="theme-color" content="#1e7a5c">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+  <!-- ====================================================== Header ==== -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.svg" alt="" width="38" height="38">
+        <span class="brand__name">LEG
+          <span class="brand__sub">Lokale Elektrizitätsgemeinschaften</span>
+        </span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menü öffnen">
+        <span class="nav-toggle__bars" aria-hidden="true"></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Hauptnavigation">
+        <ul class="site-nav__list">
+          <li><a href="#ueber">Über die LEG</a></li>
+          <li><a href="#galerie">Einblicke</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#sponsoren">Partner</a></li>
+          <li><a class="btn btn--primary btn--sm" href="#kontakt">Mitglied werden</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ==================================================== Hero ==== -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div>
+          <span class="eyebrow">Energie aus der Nachbarschaft</span>
+          <h1 class="hero__title">Strom, der im <em>Quartier</em> bleibt.</h1>
+          <p class="hero__text">
+            In einer lokalen Elektrizitätsgemeinschaft erzeugen, teilen und nutzen
+            Nachbarinnen und Nachbarn ihren Strom gemeinsam. Weniger Netzbezug,
+            stabilere Kosten und Projekte, die man vor der eigenen Haustür sieht.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#events">Kommende Events ansehen</a>
+            <a class="btn btn--ghost" href="#ueber">Wie funktioniert das?</a>
+          </div>
+          <p class="hero__note">Nächster Termin: Foodtruck-Abend am 18. September</p>
+        </div>
+
+        <div class="hero__media">
+          <img src="assets/img-solar.svg" alt="Illustrierte Häuserzeile mit Solaranlagen auf den Dächern" width="800" height="600">
+          <p class="hero__badge">
+            <span aria-hidden="true">☀️</span>
+            Sunny sagt Hallo
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== Kennzahlen ==== -->
+    <!-- PLATZHALTER: Werte durch echte Zahlen der Gemeinschaft ersetzen. -->
+    <section class="section section--tight section--alt" aria-label="Die LEG in Zahlen">
+      <div class="container">
+        <div class="stats" data-reveal>
+          <div class="stat">
+            <span class="stat__value">142</span>
+            <span class="stat__label">Haushalte in der Gemeinschaft</span>
+          </div>
+          <div class="stat">
+            <span class="stat__value">310 kWp</span>
+            <span class="stat__label">installierte PV-Leistung</span>
+          </div>
+          <div class="stat">
+            <span class="stat__value">4</span>
+            <span class="stat__label">Quartiere im Verbund</span>
+          </div>
+          <div class="stat">
+            <span class="stat__value">−38 %</span>
+            <span class="stat__label">Netzbezug im Sommerhalbjahr</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================== Über ==== -->
+    <section class="section" id="ueber">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Über die LEG</span>
+          <h2>Gemeinsam erzeugen, teilen und sparen</h2>
+          <p>
+            Eine LEG ist ein Zusammenschluss von Haushalten, Betrieben und
+            Einrichtungen im selben Gebiet. Der lokal erzeugte Strom wird intern
+            verteilt, statt den Umweg über den überregionalen Markt zu nehmen.
+          </p>
+        </div>
+
+        <div class="grid-3" data-reveal>
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="4"></circle>
+                <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"></path>
+              </svg>
+            </div>
+            <h3>Erzeugen</h3>
+            <p>
+              PV-Anlagen auf Dächern von Wohnhäusern, Vereinsheimen und Betrieben
+              speisen in das gemeinsame Netz der Gemeinschaft ein.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="18" cy="5" r="3"></circle>
+                <circle cx="6" cy="12" r="3"></circle>
+                <circle cx="18" cy="19" r="3"></circle>
+                <path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"></path>
+              </svg>
+            </div>
+            <h3>Teilen</h3>
+            <p>
+              Wer gerade Strom übrig hat, gibt ihn an die Nachbarschaft weiter.
+              Die Abrechnung läuft über die Gemeinschaft, nicht über den Markt.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M13 2L4 14h7l-1 8 9-12h-7z"></path>
+              </svg>
+            </div>
+            <h3>Sparen</h3>
+            <p>
+              Weniger Netzentgelte, planbarere Preise und ein sichtbarer Beitrag
+              zur Energiewende direkt im eigenen Quartier.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================ Galerie ==== -->
+    <section class="section section--alt" id="galerie">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Einblicke</span>
+          <h2>Bilder aus der Gemeinschaft</h2>
+          <p>Platzhalter-Motive — später einfach durch eigene Fotos ersetzen.</p>
+        </div>
+
+        <div class="gallery" data-reveal>
+          <figure>
+            <img src="assets/img-solar.svg" alt="Häuser mit Photovoltaik-Modulen auf den Dächern" width="800" height="600" loading="lazy">
+            <figcaption>Unsere Anlagen auf den Dächern im Quartier</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/img-community.svg" alt="Menschen im Gespräch an einem Infopoint der LEG" width="800" height="600" loading="lazy">
+            <figcaption>Infopoint und Austausch beim Nachbarschaftstreffen</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/img-evening.svg" alt="Beleuchtetes Quartier am Abend mit Lichterketten" width="800" height="600" loading="lazy">
+            <figcaption>Abendstimmung bei Veranstaltungen im Viertel</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================= Events ==== -->
+    <section class="section" id="events">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Termine</span>
+          <h2>Kommende Events</h2>
+          <p>Von Foodtruck bis Preisverleihung: Was in den nächsten Wochen ansteht.</p>
+        </div>
+
+        <div class="events-toolbar">
+          <div class="filter-chips" role="group" aria-label="Events nach Kategorie filtern">
+            <button class="chip" type="button" data-filter="alle" aria-pressed="true">Alle</button>
+            <button class="chip" type="button" data-filter="foodtruck" aria-pressed="false">Foodtruck</button>
+            <button class="chip" type="button" data-filter="infoveranstaltung" aria-pressed="false">Infoveranstaltung</button>
+            <button class="chip" type="button" data-filter="maskottchen" aria-pressed="false">Sunny</button>
+            <button class="chip" type="button" data-filter="awards" aria-pressed="false">Awards</button>
+          </div>
+
+          <div class="search-field">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="7"></circle>
+              <path d="M20 20l-3.5-3.5"></path>
+            </svg>
+            <label class="visually-hidden" for="event-search">Events durchsuchen</label>
+            <input id="event-search" type="search" placeholder="Events durchsuchen …" data-search autocomplete="off">
+          </div>
+        </div>
+
+        <p class="filter-status" data-filter-status role="status" aria-live="polite"></p>
+
+        <div class="event-grid" data-event-grid>
+
+          <!-- Event 1 -->
+          <article class="event-card" data-category="foodtruck" data-title="Lokaler Foodtruck-Abend bei der LEG">
+            <div class="event-card__media">
+              <img src="assets/img-foodtruck.svg" alt="Foodtruck mit Wimpelkette auf dem LEG-Hof" width="800" height="600" loading="lazy">
+              <p class="event-card__date">
+                <span class="event-card__day">18</span>
+                <span class="event-card__month">Sep</span>
+              </p>
+            </div>
+            <div class="event-card__body">
+              <span class="tag">Foodtruck</span>
+              <h3>Lokaler Foodtruck-Abend bei der LEG</h3>
+              <p>
+                Regionaler Foodtruck, Gespräche am Stand und kurze Info-Häppchen
+                zu gemeinsamer Energie vor Ort.
+              </p>
+              <a class="event-card__link" href="events/event-1.html">
+                Zum Beitrag <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Event 2 -->
+          <article class="event-card" data-category="infoveranstaltung" data-title="Infoabend: So funktioniert die LEG">
+            <div class="event-card__media">
+              <img src="assets/img-info.svg" alt="Vortrag mit Diagrammen vor Publikum" width="800" height="600" loading="lazy">
+              <p class="event-card__date">
+                <span class="event-card__day">24</span>
+                <span class="event-card__month">Sep</span>
+              </p>
+            </div>
+            <div class="event-card__body">
+              <span class="tag">Infoveranstaltung</span>
+              <h3>Infoabend: So funktioniert die LEG</h3>
+              <p>
+                Kompakter Überblick für neue Mitglieder, Nachbarschaften und
+                Interessierte — mit viel Raum für Fragen.
+              </p>
+              <a class="event-card__link" href="events/event-2.html">
+                Zum Beitrag <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Event 3 -->
+          <article class="event-card" data-category="maskottchen" data-title="Sunny lädt zum Familiennachmittag ein">
+            <div class="event-card__media">
+              <img src="assets/img-sunny.svg" alt="Sunny, das Sonnen-Maskottchen der LEG, winkt" width="800" height="600" loading="lazy">
+              <p class="event-card__date">
+                <span class="event-card__day">02</span>
+                <span class="event-card__month">Okt</span>
+              </p>
+            </div>
+            <div class="event-card__body">
+              <span class="tag tag--sun">Maskottchen</span>
+              <h3>Sunny lädt zum Familiennachmittag ein</h3>
+              <p>
+                Unser Maskottchen Sunny begleitet Mitmachstationen, Bastelecken
+                und Fotopunkte für Groß und Klein.
+              </p>
+              <a class="event-card__link" href="events/event-3.html">
+                Zum Beitrag <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Event 4 -->
+          <article class="event-card" data-category="awards" data-title="WG Green Living Awards">
+            <div class="event-card__media">
+              <img src="assets/img-awards.svg" alt="Pokal auf einer Bühne mit Konfetti" width="800" height="600" loading="lazy">
+              <p class="event-card__date">
+                <span class="event-card__day">11</span>
+                <span class="event-card__month">Okt</span>
+              </p>
+            </div>
+            <div class="event-card__body">
+              <span class="tag">Awards</span>
+              <h3>WG Green Living Awards</h3>
+              <p>
+                Auszeichnung für gemeinschaftliche Wohnideen, Energieeffizienz
+                und smarte Nachbarschaftsprojekte.
+              </p>
+              <a class="event-card__link" href="events/event-4.html">
+                Zum Beitrag <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="empty-state" data-empty hidden>
+          Keine Events gefunden. Anderen Suchbegriff probieren oder Filter auf „Alle“ zurücksetzen.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================== Sponsoren ==== -->
+    <section class="section section--alt" id="sponsoren">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Partner</span>
+          <h2>Sponsoren und Unterstützer</h2>
+          <p>
+            Die LEG arbeitet mit Betrieben und Einrichtungen aus der Region
+            zusammen. Die Felder unten sind Platzhalter für echte Partner.
+          </p>
+        </div>
+
+        <div class="sponsor-grid" data-reveal>
+          <!-- PLATZHALTER: Logo und Text des lokalen Solarherstellers eintragen. -->
+          <article class="sponsor-card">
+            <div class="sponsor-card__logo">
+              <img src="assets/sponsor-solar.svg" alt="Logo-Platzhalter des lokalen Solarherstellers" width="320" height="120" loading="lazy">
+            </div>
+            <div>
+              <h3>Lokaler Solarhersteller</h3>
+              <p>
+                Platzhalter für den regionalen Hersteller der PV-Module: kurze
+                Beschreibung der Zusammenarbeit, Standort und Link zur Website.
+              </p>
+            </div>
+          </article>
+
+          <!-- PLATZHALTER: Logo und Text des Stadtwerks eintragen. -->
+          <article class="sponsor-card">
+            <div class="sponsor-card__logo">
+              <img src="assets/sponsor-stadtwerk.svg" alt="Logo-Platzhalter des Stadtwerks" width="320" height="120" loading="lazy">
+            </div>
+            <div>
+              <h3>Stadtwerk</h3>
+              <p>
+                Platzhalter für das Stadtwerk: Rolle bei Netzanschluss und
+                Abrechnung, Ansprechperson und Kontaktmöglichkeit.
+              </p>
+            </div>
+          </article>
+
+          <article class="sponsor-card">
+            <div class="sponsor-card__logo">
+              <img src="assets/sponsor-generic.svg" alt="Logo-Platzhalter für weiteren Partner" width="320" height="120" loading="lazy">
+            </div>
+            <div>
+              <h3>Weiterer Partner</h3>
+              <p>
+                Freie Fläche für Handwerksbetriebe, Vereine oder Förderprogramme,
+                die die Gemeinschaft unterstützen.
+              </p>
+            </div>
+          </article>
+
+          <article class="sponsor-card sponsor-card--cta">
+            <h3>Partner werden</h3>
+            <p>
+              Betrieb aus der Region? Wir nehmen gern weitere Unterstützer auf —
+              die Fläche wächst mit.
+            </p>
+            <a class="btn btn--primary btn--sm" href="#kontakt">Kontakt aufnehmen</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================ CTA-Band ==== -->
+    <section class="cta-band" id="kontakt">
+      <div class="container cta-band__inner">
+        <div>
+          <span class="eyebrow">Mitmachen</span>
+          <h2>Nachbarschaft mit eigener Energie</h2>
+          <p>
+            Fragen zur Mitgliedschaft, zur eigenen Dachfläche oder zu einem der
+            Events? Schreib uns — oder komm einfach beim nächsten Infoabend vorbei.
+          </p>
+        </div>
+        <div class="cta-band__actions">
+          <!-- PLATZHALTER: echte Adresse eintragen. -->
+          <a class="btn btn--light" href="mailto:info@leg-beispiel.de">Nachricht schreiben</a>
+          <a class="btn btn--ghost" href="#events">Zu den Events</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ====================================================== Footer ==== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <span class="site-footer__brand">
+            <img src="assets/logo.svg" alt="" width="32" height="32">
+            LEG
+          </span>
+          <p>
+            Lokale Elektrizitätsgemeinschaften bündeln Erzeugung und Verbrauch
+            von Strom in der Nachbarschaft — gemeinschaftlich organisiert und
+            vor Ort sichtbar.
+          </p>
+        </div>
+
+        <div>
+          <h4>Seite</h4>
+          <ul>
+            <li><a href="#ueber">Über die LEG</a></li>
+            <li><a href="#galerie">Einblicke</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#sponsoren">Partner</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Kontakt</h4>
+          <!-- PLATZHALTER: echte Kontaktdaten und Rechtstexte ergänzen. -->
+          <ul>
+            <li>LEG Quartiersbüro</li>
+            <li>Musterstraße 1, 12345 Musterstadt</li>
+            <li><a href="mailto:info@leg-beispiel.de">info@leg-beispiel.de</a></li>
+            <li><a href="#kontakt">Impressum &amp; Datenschutz</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <span>© 2026 LEG — Prototyp für Design Thinking Team 05</span>
+        <span>Alle Inhalte sind Platzhalter.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" role="img" aria-label="LEG Logo">
+  <circle cx="20" cy="20" r="19" fill="#1e7a5c"/>
+  <circle cx="20" cy="20" r="7.5" fill="#f0a92b"/>
+  <g stroke="#f0a92b" stroke-width="2.6" stroke-linecap="round">
+    <path d="M20 4.5v4"/>
+    <path d="M20 31.5v4"/>
+    <path d="M4.5 20h4"/>
+    <path d="M31.5 20h4"/>
+    <path d="M9.1 9.1l2.8 2.8"/>
+    <path d="M28.1 28.1l2.8 2.8"/>
+    <path d="M30.9 9.1l-2.8 2.8"/>
+    <path d="M11.9 28.1l-2.8 2.8"/>
+  </g>
+</svg>
