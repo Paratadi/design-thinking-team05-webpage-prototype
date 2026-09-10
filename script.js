@@ -3,7 +3,7 @@
    Vanilla JS, kein Build, keine Abhängigkeiten.
 
    Die Eventdaten stehen in events-data.js (window.LEG_EVENTS). Dieses Skript
-   baut daraus die Karten der Startseite und die einzelne Beitragsseite.
+   baut daraus die Liste der Startseite und die einzelne Beitragsseite.
 
    Jeder Block prüft zuerst, ob seine Elemente existieren, damit dieselbe
    Datei auf allen Seiten eingebunden werden kann.
@@ -43,38 +43,39 @@
     return null;
   }
 
-  /* ------------------------------------------------------- Kartenmarkup */
-  function cardHtml(ev) {
-    var tagClass = ev.category === 'maskottchen' ? 'tag tag--sun' : 'tag';
-
+  /* -------------------------------------------------------- Zeilenmarkup */
+  function rowHtml(ev) {
+    /* Farbe des Kategorie-Labels kommt aus style.css: .tag--<category> */
     return '' +
-      '<article class="event-card" data-category="' + esc(ev.category) + '"' +
+      '<article class="event-row" data-category="' + esc(ev.category) + '"' +
       ' data-title="' + esc(ev.title) + '">' +
-        '<div class="event-card__media">' +
-          '<img src="' + esc(assetsPath + ev.image) + '" alt="' + esc(ev.alt) + '"' +
-          ' width="800" height="600" loading="lazy">' +
-          '<p class="event-card__date">' +
-            '<span class="event-card__day">' + esc(ev.day) + '</span>' +
-            '<span class="event-card__month">' + esc(ev.month) + '</span>' +
-          '</p>' +
-        '</div>' +
-        '<div class="event-card__body">' +
-          '<span class="' + tagClass + '">' + esc(ev.categoryLabel) + '</span>' +
+        '<p class="event-row__date">' +
+          '<span class="event-row__day">' + esc(ev.day) + '</span>' +
+          '<span class="event-row__month">' + esc(ev.month) + '</span>' +
+        '</p>' +
+        '<img class="event-row__thumb" src="' + esc(assetsPath + ev.image) + '"' +
+        ' alt="' + esc(ev.alt) + '" width="104" height="72" loading="lazy">' +
+        '<div class="event-row__text">' +
+          '<span class="tag tag--' + esc(ev.category) + '">' +
+            esc(ev.categoryLabel) + '</span>' +
           '<h3>' + esc(ev.title) + '</h3>' +
-          '<p>' + esc(ev.teaser) + '</p>' +
-          '<a class="event-card__link" href="' + esc(eventUrl(ev.id)) + '">' +
-            'Zum Beitrag <span aria-hidden="true">&rarr;</span>' +
-          '</a>' +
+          '<p class="event-row__teaser">' + esc(ev.teaser) + '</p>' +
+          '<p class="event-row__when">' + esc(ev.time) + ' &middot; ' +
+            esc(ev.location) + '</p>' +
         '</div>' +
+        '<a class="event-row__go" href="' + esc(eventUrl(ev.id)) + '"' +
+        ' aria-label="Beitrag lesen: ' + esc(ev.title) + '">' +
+          '<span aria-hidden="true">&rarr;</span>' +
+        '</a>' +
       '</article>';
   }
 
-  /* ------------------------------------------- Karten auf der Startseite */
-  function renderEventGrid() {
-    var grid = document.querySelector('[data-event-grid]');
-    if (!grid || !events.length) return;
+  /* ------------------------------------------- Liste auf der Startseite */
+  function renderEventList() {
+    var list = document.querySelector('[data-event-list]');
+    if (!list || !events.length) return;
 
-    grid.innerHTML = events.map(cardHtml).join('');
+    list.innerHTML = events.map(rowHtml).join('');
   }
 
   /* ---------------------------------------------------------------- Nav */
@@ -119,12 +120,12 @@
 
   /* ------------------------------------------------- Filter + Suche */
   function initEventFilter() {
-    var grid = document.querySelector('[data-event-grid]');
+    var list = document.querySelector('[data-event-list]');
     var chips = document.querySelectorAll('[data-filter]');
     var search = document.querySelector('[data-search]');
-    if (!grid || !chips.length) return;
+    if (!list || !chips.length) return;
 
-    var cards = Array.prototype.slice.call(grid.querySelectorAll('[data-category]'));
+    var cards = Array.prototype.slice.call(list.querySelectorAll('[data-category]'));
     var empty = document.querySelector('[data-empty]');
     var status = document.querySelector('[data-filter-status]');
     var activeCategory = 'alle';
@@ -255,7 +256,7 @@
     for (var step = 1; related.length < 2 && step < events.length; step++) {
       related.push(events[(index + step) % events.length]);
     }
-    fill('related', related.map(cardHtml).join(''));
+    fill('related', related.map(rowHtml).join(''));
   }
 
   /* -------------------------------------------------- Scroll-Reveal */
@@ -288,7 +289,7 @@
   }
 
   /* Reihenfolge zählt: erst Karten bauen, dann filtern. */
-  renderEventGrid();
+  renderEventList();
   renderEventPage();
   initNav();
   initHeaderScroll();

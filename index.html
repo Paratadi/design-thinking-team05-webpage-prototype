@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="style.css">
   <script>document.documentElement.classList.add('js');</script>
 </head>
-<body data-assets-path="assets/" data-events-path="events/">
+<body class="has-dark-hero" data-assets-path="assets/" data-events-path="events/">
   <a class="skip-link" href="#main">Zum Inhalt springen</a>
 
   <!-- ====================================================== Header ==== -->
@@ -61,10 +61,6 @@
 
         <div class="hero__media">
           <img src="assets/img-solar.svg" alt="Illustrierte Häuserzeile mit Solaranlagen auf den Dächern" width="800" height="600">
-          <p class="hero__badge">
-            <span aria-hidden="true">☀️</span>
-            Sunny sagt Hallo
-          </p>
         </div>
       </div>
     </section>
@@ -156,7 +152,7 @@
     </section>
 
     <!-- ================================================= Events ==== -->
-    <section class="section" id="events">
+    <section class="section section--dark" id="events">
       <div class="container">
         <div class="section-head" data-reveal>
           <span class="eyebrow">Termine</span>
@@ -185,14 +181,14 @@
 
         <p class="filter-status" data-filter-status role="status" aria-live="polite"></p>
 
-        <!-- Die Karten werden aus events-data.js erzeugt (siehe script.js).
+        <!-- Die Zeilen werden aus events-data.js erzeugt (siehe script.js).
              Neues Event = neuer Eintrag in events-data.js, hier nichts ändern. -->
-        <div class="event-grid" data-event-grid></div>
+        <div class="event-list" data-event-list data-reveal></div>
 
         <noscript>
           <p class="empty-state">
-            Für die Eventübersicht wird JavaScript benötigt. Die Termine stehen
-            auch am Aushang im Quartiersbüro.
+            Für die Eventübersicht wird JavaScript benötigt. Die Termine hängen
+            auch am Aushang im Quartiersbüro aus.
           </p>
         </noscript>
 

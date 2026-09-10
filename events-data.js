@@ -428,8 +428,8 @@ window.LEG_EVENTS = [
     dateLabel: '13. März 2027',
     time: '10:00 – 14:00 Uhr',
     location: 'Treffpunkt LEG-Hof',
-    image: 'img-solar.svg',
-    alt: 'Illustrierte Häuserzeile mit Solaranlagen auf den Dächern',
+    image: 'Nachbarschaft.png',
+    alt: 'Luftaufnahme einer Wohnsiedlung, auf mehreren Dächern liegen Solarmodule',
     teaser: 'Anlagen checken, Module reinigen, danach gemeinsam grillen — mit Sunny als Vorarbeiter.',
     lead: 'Einmal im Frühjahr gehen wir gemeinsam über die Anlagen: reinigen, prüfen, dokumentieren — und danach zusammen essen.',
     sections: [
